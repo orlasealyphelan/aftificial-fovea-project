@@ -64,6 +64,6 @@ def run(pred, c, exp):
 
 if __name__ == "__main__":
     prediction = True  # predicted results - True, ground truth results - False
-    classify = True  # classification results - True, YOLO results - False
-    exp_num = 2  # experiment number to reformat
+    classify = False  # classification results - True, YOLO results - False
+    exp_num = 4  # experiment number to reformat
     run(prediction, classify, exp_num)

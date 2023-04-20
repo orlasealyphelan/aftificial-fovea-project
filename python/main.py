@@ -42,7 +42,7 @@ def main(function, num, curr_epoch=87033333, accumulation_time=33333, save_resul
 
     if save_results:
         params = {'curr_epoch': curr_epoch, 'eps': eps, 'min_samples': min_samples, 'function': function,
-                  'pixel_error': pixel_error}
+                  'blur': blur, 'pixel_error': pixel_error}
 
         # create directory for results
         direct = './results/exp-{}'.format(num)
@@ -153,16 +153,16 @@ def main(function, num, curr_epoch=87033333, accumulation_time=33333, save_resul
 
                         # dilate mask
                         kernel = np.ones((15, 15), dtype='uint8')
-                        dilation = cv2.dilate(dframe, kernel, iterations=5)
+                        mask = cv2.dilate(dframe, kernel, iterations=5)
 
                         if blur:
                             # blur mask and apply
-                            blurred_mask = cv2.blur(dilation, [30, 30])
+                            blurred_mask = cv2.blur(mask, [30, 30])
                             masked = cv2.blur(rgb_frame, [100, 100])
                             masked[blurred_mask == 255] = rgb_frame[blurred_mask == 255]
                         else:
                             # apply mask
-                            masked = cv2.bitwise_and(rgb_frame, rgb_frame, mask=dilation)
+                            masked = cv2.bitwise_and(rgb_frame, rgb_frame, mask=mask)
 
                         # crop masked results and detect objects
                         cropped_regions = crop_frame(objects, masked)
@@ -231,5 +231,5 @@ def measure_inference_time(function, exp, num_repetitions):
 
 
 if __name__ == "__main__":
-    # measure_inference_time('OD', 1, 2)
-    main('classify', 4)
+    # measure_inference_time('OD', 3, 2)
+    main('ODMask', 5, save_results=True, blur=True)

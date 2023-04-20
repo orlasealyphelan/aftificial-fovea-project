@@ -124,6 +124,7 @@ def read_inputs(func, results_fname):
 if __name__ == "__main__":
     # example use: read in formatted classification results
     # calculates accuracy and iou to output files
-    gt, results = read_inputs('classify', './results/exp-2/formatted.csv')
-    coco_map(results, gt, 0.1, 0.95, 0.05, './results/exp-2/map.csv')
-    calculate_iou(results, gt, './results/exp-2/iou.csv')
+    exp = 4
+    gt, results = read_inputs('detect', './results/exp-{}/formatted.csv'.format(exp))
+    coco_map(results, gt, 0.1, 0.95, 0.05, './results/exp-{}/map.csv'.format(exp))
+    calculate_iou(results, gt, './results/exp-{}/iou.csv'.format(exp))

@@ -22,7 +22,8 @@ def mean_average_precision(
         float: mAP value across all classes given a specific IoU threshold
     """
 
-    # list storing all AP for respective classes
+    # lists for storing metrics for respective classes
+    # added recall, precision, TP and FP lists
     average_precisions = []
     recall_list = []
     precision_list = []
@@ -116,4 +117,6 @@ def mean_average_precision(
         recall_list.append(recalls)
         # torch.trapz for numerical integration
         average_precisions.append(torch.trapz(precisions, recalls))
+
+        # changes return function to return all metrics caculated
     return average_precisions, precision_list, recall_list, TP_list, FP_list
