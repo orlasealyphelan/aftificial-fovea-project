@@ -19,8 +19,8 @@ MATLAB code and images used to investigate calibration of cameras and projection
 Python code used in main implementation, performance measurement, and classifier training.  
 
 1. `main.py`: main python implementation.  
-**Functions**.  
--`main`: run object detection, specifying function paramter as:  
+**Functions**:  
+- `main`: run object detection, specifying function paramter as:  
   - 'projection': Visualise results of clustering and projection of bounding boxes. 
   - 'classify': Run full implementation using classification model.
   - 'OD': Run full implementation using YOLOv5s object detection model.
@@ -53,18 +53,18 @@ Python code used in main implementation, performance measurement, and classifier
 4. `yolo_detection_fullframe.py`: YOLOv5s run on each full frame of the RGB video. Used for performance comparison.  
 
 #### Sub-directories
-`annotations`: annotations of RGB video
-- `bike_person`: used for YOLO, bicycle and person annotated seperately.  
-- `rider`: used with classifier, bicycle class = rider with person included.  
-`data`: RGB and event data.  
-`models`: `model_resnet18.pth` - trained classification model.  
+- `annotations`: annotations of RGB video
+  - `bike_person`: used for YOLO, bicycle and person annotated seperately.  
+  - `rider`: used with classifier, bicycle class = rider with person included.  
+- `data`: RGB and event data.  
+- `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
-`results`: some example results. In each experiment folder:
-- `detect.csv`/`classify.csv`: Object detection/classification results.
-- `parameters.txt`: List of parameters used in experiment.
-- `formatted.csv`: Formatted results from running `convert_results.py`.
--`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
+- `results`: some example results. In each experiment folder:
+  - `detect.csv`/`classify.csv`: Object detection/classification results.
+  - `parameters.txt`: List of parameters used in experiment.
+  - `formatted.csv`: Formatted results from running `convert_results.py`.
+  -`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
