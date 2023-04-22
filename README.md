@@ -1,32 +1,32 @@
 # Artificial Fovea Project
 This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and frame-based camera'
-With exmaple results.
+With example results.
 
 ## Directories
 ### matlab
 MATLAB code and images used to investigate calibration of cameras and projection of points between image planes.  
 
 `8.9` & `ED`: Calibration images used in MATLAB Stereo Camera Calibrator.  
-`stereoParams`: Calibration results.  
-`projectoinFunctions`: Projects points from one camera image plane to the other using build in MATLAB functions.  
-`projectoinEquation`: Projects points from one camera image plane to the other using derived equation with exact extrinsic parameters for each pattern.  
-`calculateAverageKRt`: Calculated average camera parameters for use in projection - `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
-`av_divKRt`: File containing `av_divKRt` calculated in `calculateAverageKRt`.  
-`av_KRt_projection`: Script to project points using equation with average extrinsic parameters.  
-`calculateError`: Funtion file to calculate the reprojection error.  
+`stereoParams.mat`: Calibration results.  
+`projectoinFunctions.m`: Projects points from one camera image plane to the other using build in MATLAB functions.  
+`projectoinEquation.m`: Projects points from one camera image plane to the other using derived equation with exact extrinsic parameters for each pattern.  
+`calculateAverageKRt.m`: Calculated average camera parameters for use in projection - `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
+`av_divKRt.mat`: File containing `av_divKRt` calculated in `calculateAverageKRt`.  
+`av_KRt_projection.m`: Script to project points using equation with average extrinsic parameters.  
+`calculateError.m`: Funtion file to calculate the reprojection error.  
 
 ### python
 Python code used in main implementation, performance measurement, and classifier training.  
 
-1. `main.py`: main python implementation.
-**Functions**
-`main`: run object detection, specifying function paramter as:  
-- 'projection': Visualise results of clustering and projection of bounding boxes. 
-- 'classify': Run full implementation using classification model.
-- 'OD': Run full implementation using YOLOv5s object detection model.
-- 'ODMask': Run full implementation using YOLOv5s object detection model and apply background mask. Set blur=True to use blurred mask over binary mask.
+1. `main.py`: main python implementation.  
+**Functions**:  
+- `main`: run object detection, specifying function paramter as:  
+  - 'projection': Visualise results of clustering and projection of bounding boxes. 
+  - 'classify': Run full implementation using classification model.
+  - 'OD': Run full implementation using YOLOv5s object detection model.
+  - 'ODMask': Run full implementation using YOLOv5s object detection model and apply background mask. Set blur=True to use blurred mask over binary mask.
 
-  `measure_inference_time`: run full implementation `num_repetitions` times and measure inference times every frame. `function` same as above.  
+- `measure_inference_time`: run full implementation `num_repetitions` times and measure inference times every frame. `function` same as above.  
 
 **Other files used in main implementation**
 - `detection.py`: Functions related to object detection & classification.
@@ -53,13 +53,18 @@ Python code used in main implementation, performance measurement, and classifier
 4. `yolo_detection_fullframe.py`: YOLOv5s run on each full frame of the RGB video. Used for performance comparison.  
 
 #### Sub-directories
-`annotations`: annotations of RGB video
-- `bike_person`: used for YOLO, bicycle and person annotated seperately.  
-- `rider`: used with classifier, bicycle class = rider with person included.  
-`data`: RGB and event data.  
-`models`: `model_resnet18.pth` - trained classification model.  
+- `annotations`: annotations of RGB video
+  - `bike_person`: used for YOLO, bicycle and person annotated seperately.  
+  - `rider`: used with classifier, bicycle class = rider with person included.  
+- `data`: RGB and event data.  
+- `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
+- `results`: some example results. In each experiment folder:
+  - `detect.csv`/`classify.csv`: Object detection/classification results.
+  - `parameters.txt`: List of parameters used in experiment.
+  - `formatted.csv`: Formatted results from running `convert_results.py`.
+  -`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
