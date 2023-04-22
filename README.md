@@ -7,13 +7,13 @@ With example results.
 MATLAB code and images used to investigate calibration of cameras and projection of points between image planes.  
 
 `8.9` & `ED`: Calibration images used in MATLAB Stereo Camera Calibrator.  
-`stereoParams`: Calibration results.  
-`projectoinFunctions`: Projects points from one camera image plane to the other using build in MATLAB functions.  
-`projectoinEquation`: Projects points from one camera image plane to the other using derived equation with exact extrinsic parameters for each pattern.  
-`calculateAverageKRt`: Calculated average camera parameters for use in projection - `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
-`av_divKRt`: File containing `av_divKRt` calculated in `calculateAverageKRt`.  
-`av_KRt_projection`: Script to project points using equation with average extrinsic parameters.  
-`calculateError`: Funtion file to calculate the reprojection error.  
+`stereoParams.mat`: Calibration results.  
+`projectoinFunctions.m`: Projects points from one camera image plane to the other using build in MATLAB functions.  
+`projectoinEquation.m`: Projects points from one camera image plane to the other using derived equation with exact extrinsic parameters for each pattern.  
+`calculateAverageKRt.m`: Calculated average camera parameters for use in projection - `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
+`av_divKRt.mat`: File containing `av_divKRt` calculated in `calculateAverageKRt`.  
+`av_KRt_projection.m`: Script to project points using equation with average extrinsic parameters.  
+`calculateError.m`: Funtion file to calculate the reprojection error.  
 
 ### python
 Python code used in main implementation, performance measurement, and classifier training.  
@@ -60,6 +60,11 @@ Python code used in main implementation, performance measurement, and classifier
 `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
+`results`: some example results. In each experiment folder:
+- `detect.csv`/`classify.csv`: Object detection/classification results.
+- `parameters.txt`: List of parameters used in experiment.
+- `formatted.csv`: Formatted results from running `convert_results.py`.
+-`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
