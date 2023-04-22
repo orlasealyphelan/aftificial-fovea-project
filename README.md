@@ -1,6 +1,6 @@
 # Artificial Fovea Project
 This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and frame-based camera'
-With exmaple results.
+With example results.
 
 ## Directories
 ### matlab
