@@ -1,1 +1,0 @@
-{'curr_epoch': 87033333, 'eps': 20, 'min_samples': 10, 'function': 'classify', 'pixel_error': 100}

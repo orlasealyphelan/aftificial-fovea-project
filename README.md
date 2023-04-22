@@ -1,6 +1,5 @@
 # Artificial Fovea Project
-This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and frame-based camera'
-With example results.
+This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and a frame-based camera'.
 
 ## Directories
 ### matlab
@@ -60,11 +59,7 @@ Python code used in main implementation, performance measurement, and classifier
 - `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
-- `results`: some example results. In each experiment folder:
-  - `detect.csv`/`classify.csv`: Object detection/classification results.
-  - `parameters.txt`: List of parameters used in experiment.
-  - `formatted.csv`: Formatted results from running `convert_results.py`.
-  -`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
+ 
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
