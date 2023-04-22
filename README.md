@@ -60,15 +60,6 @@ Python code used in main implementation, performance measurement, and classifier
 - `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
-<<<<<<< HEAD
- 
-=======
-- `results`: some example results. In each experiment folder:  
-  - `detect.csv`/`classify.csv`: Object detection/classification results.
-  - `parameters.txt`: List of parameters used in experiment.
-  - `formatted.csv`: Formatted results from running `convert_results.py`.
-  -`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
->>>>>>> fec0e3a6fa0701a9e3ff13610ccacfd3669b0fd2
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
