@@ -1,5 +1,6 @@
 # Artificial Fovea Project
-This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and a frame-based camera'.
+
+This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and frame-based camera'.
 
 ## Directories
 ### matlab
@@ -9,7 +10,7 @@ MATLAB code and images used to investigate calibration of cameras and projection
 `stereoParams.mat`: Calibration results.  
 `projectoinFunctions.m`: Projects points from one camera image plane to the other using build in MATLAB functions.  
 `projectoinEquation.m`: Projects points from one camera image plane to the other using derived equation with exact extrinsic parameters for each pattern.  
-`calculateAverageKRt.m`: Calculated average camera parameters for use in projection - `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
+`calculateAverageKRt.m`: Calculated average camera parameters for use in projection: `av_divKRt`= (K1/K2)*([R1 t1]/[R2 t2])average.  
 `av_divKRt.mat`: File containing `av_divKRt` calculated in `calculateAverageKRt`.  
 `av_KRt_projection.m`: Script to project points using equation with average extrinsic parameters.  
 `calculateError.m`: Funtion file to calculate the reprojection error.  
@@ -35,9 +36,9 @@ Python code used in main implementation, performance measurement, and classifier
 2. `convert_results.py`: convert results from `main` to format used in performance measurement.  
 - `prediction` = True for predicted results, False for ground truth annotations
 - `classify` = True/Fasle for classication/object detection results
-- `exp_num`: experiment number of results.  
+- `exp_num`: experiment number for storing results.  
 
-3. `measure_performance.py`: reads in formatted inputs, calculates:
+3. `measure_performance.py`: reads in formatted inputs, calculates accuracy measurements.
 - `read_inputs`: reads in formatted annotations and predictions and returns list used in performance measurement.
 - `coco_map`: calculates following metrics for each class over a range of specified intersection over union thresholds and writes resuls to `map.csv`:
   - Average Precision (mAP)
@@ -53,20 +54,28 @@ Python code used in main implementation, performance measurement, and classifier
 
 #### Sub-directories
 - `annotations`: annotations of RGB video
-  - `bike_person`: used for YOLO, bicycle and person annotated seperately.  
-  - `rider`: used with classifier, bicycle class = rider with person included.  
+  - `bike_person`: used for YOLO. Bicycle and person annotated seperately.  
+  - `rider`: used with classifier. Bicycle class = rider with person included.  
 - `data`: RGB and event data.  
 - `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
+<<<<<<< HEAD
  
+=======
+- `results`: some example results. In each experiment folder:  
+  - `detect.csv`/`classify.csv`: Object detection/classification results.
+  - `parameters.txt`: List of parameters used in experiment.
+  - `formatted.csv`: Formatted results from running `convert_results.py`.
+  -`iou.csv` & `map.csv`: Performance evaluation from running `measure_performance.py`.  
+>>>>>>> fec0e3a6fa0701a9e3ff13610ccacfd3669b0fd2
   
 ### training
 `dataAquisition`: Extract data from BDD dataset and collected data for classifier training.
 1. Download [BDD dataset](https://bdd-data.berkeley.edu/) and add directory location to `dataAquisition/BDD_extract.py`.  
 2. Run `dataAquisition/BDD_extract.py` and `dataAquisition/DanganData.py` to extract data.  
 
-**Before Training**
+**Before Training**:  
 Split up data into train, validation, and test splits and strucutre data according to structure below and run `train_classifier.py`.  
 ![image](https://user-images.githubusercontent.com/130498225/233446865-6bd04d87-45f8-4762-9e26-8f9d926f6d73.png)
 
