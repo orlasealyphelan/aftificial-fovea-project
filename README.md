@@ -18,15 +18,15 @@ MATLAB code and images used to investigate calibration of cameras and projection
 ### python
 Python code used in main implementation, performance measurement, and classifier training.  
 
-1. `main.py`: main python implementation.
-**Functions**
-`main`: run object detection, specifying function paramter as:  
-- 'projection': Visualise results of clustering and projection of bounding boxes. 
-- 'classify': Run full implementation using classification model.
-- 'OD': Run full implementation using YOLOv5s object detection model.
-- 'ODMask': Run full implementation using YOLOv5s object detection model and apply background mask. Set blur=True to use blurred mask over binary mask.
+1. `main.py`: main python implementation.  
+**Functions**.  
+-`main`: run object detection, specifying function paramter as:  
+  - 'projection': Visualise results of clustering and projection of bounding boxes. 
+  - 'classify': Run full implementation using classification model.
+  - 'OD': Run full implementation using YOLOv5s object detection model.
+  - 'ODMask': Run full implementation using YOLOv5s object detection model and apply background mask. Set blur=True to use blurred mask over binary mask.
 
-  `measure_inference_time`: run full implementation `num_repetitions` times and measure inference times every frame. `function` same as above.  
+- `measure_inference_time`: run full implementation `num_repetitions` times and measure inference times every frame. `function` same as above.  
 
 **Other files used in main implementation**
 - `detection.py`: Functions related to object detection & classification.
