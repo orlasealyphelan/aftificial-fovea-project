@@ -232,4 +232,4 @@ def measure_inference_time(function, exp, num_repetitions):
 
 if __name__ == "__main__":
     # measure_inference_time('OD', 3, 2)
-    main('ODMask', 5, save_results=True, blur=True)
+    main('OD', 1, save_results=True, blur=False)
