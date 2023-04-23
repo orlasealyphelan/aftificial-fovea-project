@@ -1,6 +1,6 @@
 # Artificial Fovea Project
 
-This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and frame-based camera'.
+This repository contains code used in the implementation of my Master's project 'Implementing an ‘Artificial Fovea’ for more efficient monitoring using the sensor fusion of an event-based and a frame-based camera'.
 
 ## Directories
 ### matlab
@@ -56,7 +56,7 @@ Python code used in main implementation, performance measurement, and classifier
 - `annotations`: annotations of RGB video
   - `bike_person`: used for YOLO. Bicycle and person annotated seperately.  
   - `rider`: used with classifier. Bicycle class = rider with person included.  
-- `data`: RGB and event data.  
+- `data`: RGB data. Event data available [here](https://nuigalwayie-my.sharepoint.com/:f:/g/personal/o_sealyphelan1_nuigalway_ie/El1TJ5i9IqBIgbjyE2HcgCABkus3ZeOOv5JyNNaaUXLHcA?e=eE088x) unzip and place in data folder with name `event_data.csv`.  
 - `models`: `model_resnet18.pth` - trained classification model.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
