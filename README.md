@@ -57,7 +57,10 @@ Python code used in main implementation, performance measurement, and classifier
   - `bike_person`: used for YOLO. Bicycle and person annotated seperately.  
   - `rider`: used with classifier. Bicycle class = rider with person included.  
 - `data`: RGB data. Event data available [here](https://nuigalwayie-my.sharepoint.com/:f:/g/personal/o_sealyphelan1_nuigalway_ie/El1TJ5i9IqBIgbjyE2HcgCABkus3ZeOOv5JyNNaaUXLHcA?e=eE088x) unzip and place in data folder with name `event_data.csv`.  
-- `models`: `model_resnet18.pth` - trained classification model.  
+- `models`: `model_resnet18.pth` - trained classification model. 
+- `results`: 
+  - `exp-1` - YOLO object detection results.
+  - `exp-2` - Classification results.  
 - `utilities`: 
   - `median_filter.py`: generates background image using median filter.  
   
